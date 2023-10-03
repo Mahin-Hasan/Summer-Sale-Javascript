@@ -27,6 +27,58 @@ function getSecondCardDetails() {
     btnValidation();
 
 }
+function getThirdCardDetails() {
+    const thirdItemName = getItemName('third-item-name');
+    const itemPrice = getItemNumber('third-item-price')
+
+    displayClickedItemName(thirdItemName);
+ 
+    // for cart calculation
+    const totalPriceInitial = getItemNumber('total-price');
+    const totalPrice = itemPrice + totalPriceInitial;
+    setItemNumber('total-price', totalPrice);
+    btnValidation();
+
+}
+function getFourthCardDetails() {
+    const fourthItemName = getItemName('fourth-item-name');
+    const itemPrice = getItemNumber('fourth-item-price')
+
+    displayClickedItemName(fourthItemName);
+ 
+    // for cart calculation
+    const totalPriceInitial = getItemNumber('total-price');
+    const totalPrice = itemPrice + totalPriceInitial;
+    setItemNumber('total-price', totalPrice);
+    btnValidation();
+
+}
+function getFifthCardDetails() {
+    const fifthItemName = getItemName('fifth-item-name');
+    const itemPrice = getItemNumber('fifth-item-price')
+
+    displayClickedItemName(fifthItemName);
+ 
+    // for cart calculation
+    const totalPriceInitial = getItemNumber('total-price');
+    const totalPrice = itemPrice + totalPriceInitial;
+    setItemNumber('total-price', totalPrice);
+    btnValidation();
+
+}
+function getSixthCardDetails() {
+    const sixthItemName = getItemName('sixth-item-name');
+    const itemPrice = getItemNumber('sixth-item-price')
+
+    displayClickedItemName(sixthItemName);
+ 
+    // for cart calculation
+    const totalPriceInitial = getItemNumber('total-price');
+    const totalPrice = itemPrice + totalPriceInitial;
+    setItemNumber('total-price', totalPrice);
+    btnValidation();
+
+}
 // trying coupon discount btn
 document.getElementById('coupon-apply-btn').addEventListener('click', function () {
     const typedCoupon = document.getElementById('coupon-field').value;
@@ -79,12 +131,12 @@ function btnValidation() {
         purchaseButton.setAttribute('disabled', true);
     }
     // coupon btn validation
-    const deleteButton = document.getElementById('coupon-apply-btn');
-    if (totalPriceCheck > 200) {
-        deleteButton.removeAttribute('disabled');
+    const couponButton = document.getElementById('coupon-apply-btn');
+    if (totalPriceCheck >= 200) {
+        couponButton.removeAttribute('disabled');
     }
     else {
-        deleteButton.setAttribute('disabled', true);
+        couponButton.setAttribute('disabled', true);
     }
 }
 

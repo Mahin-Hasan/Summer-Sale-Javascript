@@ -61,7 +61,7 @@
                     <!-- 2nd card -->
                     <div onclick="getSecondCardDetails()" class="card w-full bg-base-100 shadow-xl cursor-pointer">
                         <div class="bg-[#F8F8F8] m-4 py-2 rounded-lg">
-                            <figure><img src="images/prod2.png" alt="Shoes" /></figure>
+                            <figure><img src="images/prod2.png" /></figure>
                         </div>
                         <div class="card-body">
                             <div class="text-center space-y-2">
@@ -80,9 +80,9 @@
                         </div>
                     </div>
                     <!-- 3rd card -->
-                    <div class="card w-full bg-base-100 shadow-xl">
+                    <div onclick="getThirdCardDetails()" class="card w-full bg-base-100 shadow-xl cursor-pointer">
                         <div class="bg-[#F8F8F8] m-4 py-2 rounded-lg">
-                            <figure><img src="images/prod3.png" alt="Shoes" /></figure>
+                            <figure><img src="images/prod3.png" /></figure>
                         </div>
                         <div class="card-body">
                             <div class="text-center space-y-2">
@@ -94,8 +94,8 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                 </div>
-                                <h2 class="font-semibold text-xl">Home Cooker</h2>
-                                <p class="text-xl text-gray-500">49.00<span> TK</span></p>
+                                <h2 id="third-item-name" class="font-semibold text-xl">Home Cooker</h2>
+                                <p class="text-xl text-gray-500"><span id="third-item-price">49.00</span> TK</p>
                             </div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                 <h1 class="text-5xl font-semibold mt-16">Sportswear</h1>
                 <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8">
                     <!-- 4th card -->
-                    <div class="card w-full bg-base-100 shadow-xl">
+                    <div onclick="getFourthCardDetails()" class="card w-full bg-base-100 shadow-xl cursor-pointer">
                         <div class="bg-[#F8F8F8] m-4 py-2 rounded-lg">
                             <figure><img src="images/prod4.png" /></figure>
                         </div>
@@ -118,13 +118,13 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                 </div>
-                                <h2 class="font-semibold text-xl">Sports Back Cap</h2>
-                                <p class="text-xl text-gray-500">49.00<span> TK</span></p>
+                                <h2 id="fourth-item-name" class="font-semibold text-xl">Sports Back Cap</h2>
+                                <p class="text-xl text-gray-500"><span id="fourth-item-price">49.00</span> TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- 5th card -->
-                    <div class="card w-full bg-base-100 shadow-xl">
+                    <div onclick="getFifthCardDetails()" class="card w-full bg-base-100 shadow-xl cursor-pointer">
                         <div class="bg-[#F8F8F8] m-4 py-2 rounded-lg">
                             <figure><img src="images/prod5.png" /></figure>
                         </div>
@@ -138,13 +138,13 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                 </div>
-                                <h2 class="font-semibold text-xl">Full Jersey Set</h2>
-                                <p class="text-xl text-gray-500">69.00<span> TK</span></p>
+                                <h2 id="fifth-item-name" class="font-semibold text-xl">Full Jersey Set</h2>
+                                <p class="text-xl text-gray-500"><span id="fifth-item-price">69.00</span> TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- 6th card -->
-                    <div class="card w-full bg-base-100 shadow-xl">
+                    <div onclick="getSixthCardDetails()"class="card w-full bg-base-100 shadow-xl cursor-pointer">
                         <div class="bg-[#F8F8F8] m-4 py-2 rounded-lg">
                             <figure><img src="images/prod6.png" /></figure>
                         </div>
@@ -158,8 +158,8 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                 </div>
-                                <h2 class="font-semibold text-xl">Sports cates</h2>
-                                <p class="text-xl text-gray-500">159.00<span> TK</span></p>
+                                <h2 id="sixth-item-name" class="font-semibold text-xl">Sports cates</h2>
+                                <p class="text-xl text-gray-500"><span id="sixth-item-price">159.00</span> TK</p>
                             </div>
                         </div>
                     </div>
@@ -170,7 +170,8 @@
                 <div class="ml-3">
                     <div class="space-y-4 p-4 bg-base-100 rounded-lg mb-3">
                         <h3 class="text-2xl font-medium">Have Coupon?</h3>
-                        <input id="coupon-field" type="text" placeholder="Coupon code" class="input input-bordered w-2/3 max-w-xs" />
+                        <input id="coupon-field" type="text" placeholder="Coupon code"
+                            class="input input-bordered w-2/3 max-w-xs" />
                         <button id="coupon-apply-btn" class="btn btn-secondary text-white" disabled>Apply</button>
                     </div>
                     <div class="p-4 bg-base-100 rounded-lg">
@@ -182,7 +183,8 @@
                             <h3>Discount: <span id="discount">00</span></h3>
                             <h3>Total: <span id="net-total">00</span></h3>
                         </div>
-                        <button id="make-purchase-btn" class="btn btn-secondary w-full text-white" disabled>Make Purchase</button>
+                        <button id="make-purchase-btn" class="btn btn-secondary w-full text-white" disabled>Make
+                            Purchase</button>
                     </div>
                 </div>
             </div>
