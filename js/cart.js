@@ -92,7 +92,7 @@ document.getElementById('coupon-apply-btn').addEventListener('click', function (
         setItemNumber('net-total',totalWithDiscount);
     }
 })
-
+// bonus
 
 // Reusable Function
 function getItemName(elementId) {

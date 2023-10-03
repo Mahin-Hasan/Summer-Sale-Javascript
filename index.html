@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <!-- 6th card -->
-                    <div onclick="getSixthCardDetails()"class="card w-full bg-base-100 shadow-xl cursor-pointer">
+                    <div onclick="getSixthCardDetails()" class="card w-full bg-base-100 shadow-xl cursor-pointer">
                         <div class="bg-[#F8F8F8] m-4 py-2 rounded-lg">
                             <figure><img src="images/prod6.png" /></figure>
                         </div>
@@ -183,8 +183,32 @@
                             <h3>Discount: <span id="discount">00</span></h3>
                             <h3>Total: <span id="net-total">00</span></h3>
                         </div>
-                        <button id="make-purchase-btn" class="btn btn-secondary w-full text-white" disabled>Make
+                        <button onclick="my_modal_5.showModal()" id="make-purchase-btn" class="btn btn-secondary w-full text-white" disabled>Make
                             Purchase</button>
+                        <!-- trying modal -->
+                        <!-- Open the modal using ID.showModal() method -->
+                        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+                        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                            
+                            <div class="modal-box">
+                                <div class="card w-full">
+                                    <div class="m-4 py-2 rounded-lg">
+                                        <figure><img src="images/congo.png" /></figure>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <h2 id="sixth-item-name" class="font-semibold text-xl">Your Purchase the product</h2>
+                                        </div>
+                                    </div>
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <div class="text-center">
+                                            <button id="clear-all" class="btn btn-secondary text-center text-white">Go Home</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
                 </div>
             </div>
