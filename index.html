@@ -39,9 +39,9 @@
                 <h1 class="text-5xl font-semibold">Kitchenware</h1>
                 <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8">
                     <!-- 1st card -->
-                    <div class="card w-full bg-base-100 shadow-xl">
+                    <div onclick="getFirstCardDetails()" class="card w-full bg-base-100 shadow-xl cursor-pointer">
                         <div class="bg-[#F8F8F8] m-4 py-2 rounded-lg">
-                            <figure><img src="images/prod1.png" alt="Shoes" /></figure>
+                            <figure><img src="images/prod1.png" /></figure>
                         </div>
                         <div class="card-body">
                             <div class="text-center space-y-2">
@@ -53,13 +53,13 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                 </div>
-                                <h2 class="font-semibold text-xl">Spoon Set</h2>
-                                <p class="text-xl text-gray-500">39.00<span> TK</span></p>
+                                <h2 id="first-item-name" class="font-semibold text-xl">Spoon Set</h2>
+                                <p class="text-xl text-gray-500"><span id="first-item-price">39.00</span> TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- 2nd card -->
-                    <div class="card w-full bg-base-100 shadow-xl">
+                    <div onclick="getSecondCardDetails()" class="card w-full bg-base-100 shadow-xl cursor-pointer">
                         <div class="bg-[#F8F8F8] m-4 py-2 rounded-lg">
                             <figure><img src="images/prod2.png" alt="Shoes" /></figure>
                         </div>
@@ -73,8 +73,9 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
                                 </div>
-                                <h2 class="font-semibold text-xl">Dining Set</h2>
-                                <p class="text-xl text-gray-500">25.00<span> TK</span></p>
+                                <h2 id="second-item-name" class="font-semibold text-xl">Dining Set</h2>
+                                <p class="text-xl text-gray-500"><span id="second-item-price">25.00</span> TK</p>
+
                             </div>
                         </div>
                     </div>
@@ -169,29 +170,29 @@
                 <div class="ml-3">
                     <div class="space-y-4 p-4 bg-base-100 rounded-lg mb-3">
                         <h3 class="text-2xl font-medium">Have Coupon?</h3>
-                        <input type="text" placeholder="Coupon code" class="input input-bordered w-2/3 max-w-xs" />
-                        <button class="btn btn-secondary text-white">Apply</button>
+                        <input id="coupon-field" type="text" placeholder="Coupon code" class="input input-bordered w-2/3 max-w-xs" />
+                        <button id="coupon-apply-btn" class="btn btn-secondary text-white" disabled>Apply</button>
                     </div>
                     <div class="p-4 bg-base-100 rounded-lg">
-                        <div id="items text-2xl">
+                        <div id="items" class="text-2xl">
 
                         </div>
                         <div class="text-2xl space-y-2">
-                            <h3>Total Price: <span>00</span></h3>
-                            <h3>Discount: <span>00</span></h3>
-                            <h3>Total: <span>00</span></h3>
+                            <h3>Total Price: <span id="total-price">00</span></h3>
+                            <h3>Discount: <span id="discount">00</span></h3>
+                            <h3>Total: <span id="net-total">00</span></h3>
                         </div>
-                        <button class="btn btn-secondary w-full text-white">Apply</button>
-
+                        <button id="make-purchase-btn" class="btn btn-secondary w-full text-white" disabled>Make Purchase</button>
                     </div>
                 </div>
             </div>
         </section>
 
     </main>
-    <footer>
-
+    <footer class="footer footer-center p-10 bg-slate-950 text-white mt-10">
+        <h3>@2023, All rights reserved | Mahin Hasan</h3>
     </footer>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
