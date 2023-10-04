@@ -9,7 +9,6 @@ function getFirstCardDetails() {
     const totalPrice = itemPrice + totalPriceInitial;
 
     setItemNumber('total-price', totalPrice);
-    // 
     btnValidation();
 }
 
@@ -20,7 +19,6 @@ function getSecondCardDetails() {
 
     displayClickedItemName(secondItemName);
 
-    // for cart calculation
     const totalPriceInitial = getItemNumber('total-price');
     const totalPrice = itemPrice + totalPriceInitial;
     setItemNumber('total-price', totalPrice);
@@ -33,7 +31,6 @@ function getThirdCardDetails() {
 
     displayClickedItemName(thirdItemName);
  
-    // for cart calculation
     const totalPriceInitial = getItemNumber('total-price');
     const totalPrice = itemPrice + totalPriceInitial;
     setItemNumber('total-price', totalPrice);
@@ -46,7 +43,6 @@ function getFourthCardDetails() {
 
     displayClickedItemName(fourthItemName);
  
-    // for cart calculation
     const totalPriceInitial = getItemNumber('total-price');
     const totalPrice = itemPrice + totalPriceInitial;
     setItemNumber('total-price', totalPrice);
@@ -59,7 +55,6 @@ function getFifthCardDetails() {
 
     displayClickedItemName(fifthItemName);
  
-    // for cart calculation
     const totalPriceInitial = getItemNumber('total-price');
     const totalPrice = itemPrice + totalPriceInitial;
     setItemNumber('total-price', totalPrice);
@@ -72,7 +67,6 @@ function getSixthCardDetails() {
 
     displayClickedItemName(sixthItemName);
  
-    // for cart calculation
     const totalPriceInitial = getItemNumber('total-price');
     const totalPrice = itemPrice + totalPriceInitial;
     setItemNumber('total-price', totalPrice);
@@ -86,13 +80,25 @@ document.getElementById('coupon-apply-btn').addEventListener('click', function (
         const totalPriceInitial = getItemNumber('total-price');
         const discount = (0.2 * totalPriceInitial).toFixed(2);
         setItemNumber('discount', discount);
-        console.log(totalPriceInitial, discount);
         const totalWithDiscount = totalPriceInitial - discount;
-        console.log(totalWithDiscount);
         setItemNumber('net-total',totalWithDiscount);
     }
 })
-// bonus
+// bonus clear all result
+document.getElementById('clear-all').addEventListener('click',function(){
+    setItemNumber('total-price',00);
+    setItemNumber('discount',00);
+    setItemNumber('net-total',00);
+    const parentElement = document.getElementById('items');
+    const childElements = parentElement.getElementsByClassName('child-heading');
+    
+    const childElementsArray = Array.from(childElements);
+    
+    childElementsArray.forEach(function(childElement) {
+        parentElement.removeChild(childElement);
+    });
+    
+})
 
 // Reusable Function
 function getItemName(elementId) {
@@ -114,8 +120,8 @@ function setItemNumber(id, amount) {
 function displayClickedItemName(itemName) {
     const parentDiv = document.getElementById('items');
     const h3 = document.createElement('h3');
+    h3.classList.add('child-heading');
     const count = parentDiv.childElementCount;
-    console.log(itemName, count);
     h3.innerHTML = `${count + 1}. ${itemName} `;
     parentDiv.appendChild(h3);
 }
@@ -139,32 +145,3 @@ function btnValidation() {
         couponButton.setAttribute('disabled', true);
     }
 }
-
-/*
-document.getElementById('coupon-apply-btn').addEventListener('click',function(){
-    console.log('working');
-    document.getElementById('coupon-field').addEventListener('keyup', function (event) {
-        const text = event.target.value;
-        // console.log(text);
-        // const couponButton = 
-     
-        const totalPriceInitial = getItemNumber('total-price');
-        // const discount = 0.2 * totalPriceInitial;20% calculation
-        console.log(discount, 'asdasds');
-        if (text === 'SELL200') {
-            setItemNumber('discount',discount);
-        }
-        else{
-            return;
-        }
-       
-        // if (text === 'SELL200') {
-        //     deleteButton.removeAttribute('disabled');
-        // }
-        // else {
-        //     deleteButton.setAttribute('disabled', true);
-        // }
-    })
-   })
-
-*/
